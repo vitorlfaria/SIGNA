@@ -1,0 +1,36 @@
+﻿@model SIGNA.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div class="card">
+    <form method="POST">
+        <dl class="row mb-0 card-body">
+            <dt class="col-sm-2">
+                Código
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PESSOA_ID)
+            </dd>
+            <dt class="col-sm-2">
+                Nome Fantasia
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" asp-for="NOME_FANTASIA" class="name-input" />
+            </dd>
+            <dt class="col-sm-2">
+                CNPJ/CPF
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CNPJ_CPF)
+            </dd>
+        </dl>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-secondary text-light">Voltar</a> | 
+            <button type="submit" class="btn btn-primary">Gravar</button>
+        </div>
+    </form>
+</div>

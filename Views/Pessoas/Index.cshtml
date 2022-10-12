@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SIGNA.Models.Pessoa>
+
+@{
+    ViewData["Title"] = "CONSULTA DE NOME FANTASIA";
+    int pessoasCount = Model.Count();
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="d-flex p-0 justify-content-between">
+    <form method="POST">
+        <button type="submit" class="btn btn-primary">MONTAR LISTA</button>
+    </form>
+</div>
+
+<div class="card">
+    <table class="table">
+        <thead class="card-header">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOME_FANTASIA)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOME_FANTASIA)
+                    </td>
+                    <td>
+                        <a class="text-primary" asp-action="Detalhes" asp-route-id="@item.PESSOA_ID">DETALHES</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (pessoasCount > 0)
+{
+    <div class="d-flex p-0 justify-content-between">
+        <form method="GET">
+            <button type="submit" class="btn btn-secondary">LIMPAR</button>
+        </form>
+    </div>
+}

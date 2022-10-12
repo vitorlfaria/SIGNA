@@ -32,7 +32,7 @@ a {
 }
 
 .main {
-    min-height: 94vh;
+    min-height: 92vh;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -56,6 +56,10 @@ a {
     margin-bottom: 3rem;
 }
 
+.sidebar-brand img {
+    width: 1.4em;
+}
+
 .link-list {
     display: flex;
     flex-direction: column;
@@ -66,34 +70,34 @@ a {
     padding: 1em 2em;
 }
 
-    .nav-link:hover {
-        background-color: #333538;
-    }
+.nav-link:hover {
+    background-color: #333538;
+}
 
 .active-link {
     background-color: #333538;
 }
 
-    .active-link::after {
-        content: '';
-        width: .5em;
-        height: 100%;
-        background-color: #0359e9;
-        border-radius: 0 5px 5px 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
+.active-link::after {
+    content: '';
+    width: .5em;
+    height: 100%;
+    background-color: #0359e9;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
-    .active-link::before {
-        content: '';
-        width: 3em;
-        height: 100%;
-        background-image: linear-gradient(to right, #232528, #23252800);
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
+.active-link::before {
+    content: '';
+    width: 3em;
+    height: 100%;
+    background-image: linear-gradient(to right, #232528, #23252800);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 .form-group {
     width: fit-content;
@@ -112,4 +116,11 @@ footer {
 .btns-td {
     min-width: 12rem;
     text-overflow: ellipsis;
+}
+
+.name-input {
+    padding-inline: .5em;
+    outline: none;
+    border: 1px solid #d4dae2;
+    border-radius: .25em;
 }

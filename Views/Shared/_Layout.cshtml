@@ -11,16 +11,13 @@
 <body>
     <div class="main-grid">
         <header class="sidebar">
-            <a class="sidebar-brand" asp-area="" asp-page="/Index">TestApp</a>
+            <a class="sidebar-brand" asp-area="" asp-page="/Index"><img src="~/Logo-SIGNA.svg" alt="Logo Signa" /> SIGNA</a>
             <ul class="link-list">
                 <li>
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-link" asp-area="" asp-controller="Pessoas" asp-action="Index">Consulta</a>
                 </li>
                 <li>
-                    <a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index">Customer</a>
-                </li>
-                <li>
-                    <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                    <a class="nav-link disabled" asp-area="" asp-controller="Pessoas" asp-action="Detalhes">Detalhes</a>
                 </li>
             </ul>
         </header>
@@ -31,7 +28,7 @@
             </main>
 
             <footer>
-                &copy; 2022 - TestApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+                &copy; 2022 - SIGNA
             </footer>
         </div>
     </div>
