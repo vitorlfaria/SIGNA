@@ -47,3 +47,12 @@
         </form>
     </div>
 }
+
+@if (ViewBag.Success == "true")
+{
+    <div class="modal-success">
+        <i class="fa-regular fa-circle-check"></i>
+        <p>Registro editado com sucesso!</p>
+        <button class="btn btn-primary w-100 mt-3 fechar-modal">Ok</button>
+    </div>
+}

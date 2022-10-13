@@ -16,9 +16,14 @@ namespace SIGNA.Controllers
             _context = context;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string? success)
         {
             List<Pessoa> pessoas = new();
+
+            if(success != null)
+            {
+                ViewBag.Success = success;
+            }
 
             return View(pessoas);
         }
@@ -35,14 +40,14 @@ namespace SIGNA.Controllers
         // GET: PessoasController/Detalhes/5
         public async Task<IActionResult> Detalhes(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
             Pessoa? pessoa = await _context.Pessoas.FirstOrDefaultAsync(p => p.PESSOA_ID == id);
 
-            if(pessoa == null)
+            if (pessoa == null)
             {
                 return NotFound();
             }
@@ -61,7 +66,7 @@ namespace SIGNA.Controllers
                 Pessoa pessoaDB = await _context.Pessoas.FirstOrDefaultAsync(p => p.PESSOA_ID == id);
                 pessoaDB.NOME_FANTASIA = pessoa.NOME_FANTASIA;
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { success = "true" });
             }
             catch (DbUpdateConcurrencyException)
             {

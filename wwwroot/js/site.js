@@ -13,3 +13,17 @@
         }
     })
 })
+
+$(document).ready(() => {
+    let modal = $(".modal-success")
+    if (modal.length > 0) {
+        modal.show(500)
+        setTimeout(() => {
+            modal.hide(500)
+        }, 3000)
+    }
+
+    $(".fechar-modal").click(() => {
+        modal.hide(500)
+    })
+})
